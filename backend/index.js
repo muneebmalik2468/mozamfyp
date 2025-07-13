@@ -24,10 +24,16 @@ app.use(cors({
   credentials: true
 }));
 
+// mongoose
+//   .connect(process.env.MONGO_URL)
+//   .then(console.log("Connected to MongoDB"))
+//   .catch((err) => console.log("NOT CONNECTED TO NETWORK", err));
+
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect("mongodb+srv://finalyearproject596:finalyearproject596@cluster0.5dxe1ee.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0")
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log("NOT CONNECTED TO NETWORK", err));
+
 
 app.use("/", Routes);
 
